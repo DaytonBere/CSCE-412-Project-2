@@ -49,29 +49,58 @@ class Request {
     }
 };
 
+// class WebServer {
+//     private:
+//     std::string webServerID;
+//     int probability;
+
+
+//     WebServer(std::string ID) {
+
+//     }
+
+// };
 
 int main() {
     srand(time(0));
-    std::queue<Request*> q;
+
+    int MAXQUEUE = 5;
+    std::queue<Request*> processQueue;
+    std::queue<Request*> awaitQueue;
     Request *test = new Request("D");
-    q.push(test);
+    processQueue.push(test);
 
     for (unsigned int i; i < 1000; i++){
-        if (q.size() > 0) {
-            if (q.front()->getTimeLeft() <= 0) {
+        std::queue<Request*> tempQueue;
+
+        while (processQueue.size() > 0) {
+            if (processQueue.front()->getTimeLeft() <= 0) {
                 std::cout << "Time: " << i << ", ";
-                q.front()->printStatus();
-                q.pop();
+                processQueue.front()->printStatus();
+                processQueue.pop();
             } else {
-                q.front()->tick();
+                processQueue.front()->tick();
+                tempQueue.push(processQueue.front());
+                processQueue.pop();
+
             }
         }
 
-        if (rand() % 20 == 0) {
+        if (rand() % 10 == 0) {
             Request *nReq = new Request("A");
-            q.push(nReq);
+            awaitQueue.push(nReq);
+            std::cout << std::endl << "New Request " << awaitQueue.size() << std::endl << std::endl;
+        }
+
+        processQueue = tempQueue;
+
+        while (processQueue.size() < MAXQUEUE && awaitQueue.size() > 0) {
+            processQueue.push(awaitQueue.front());
+            awaitQueue.pop();
+            std::cout << std::endl << "Request Pushed " << processQueue.size() << std::endl << std::endl;
         }
     }
 
-    std::cout << "Ended with " << q.size() << " items in the queue" << std::endl;
+    std::cout << "Ended with " << processQueue.size() << " items in the process queue" << std::endl;
+    std::cout << "Ended with " << awaitQueue.size() << " items in the await queue" << std::endl;
 }
