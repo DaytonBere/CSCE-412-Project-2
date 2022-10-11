@@ -7,6 +7,7 @@
 class Request {
     private:
 
+    std::string webServerID;
     std::string inIP;
     std::string outIP;
     int timeLeft;
@@ -24,7 +25,12 @@ class Request {
 
     public:
 
-    Request();
+    Request(std::string ID) {
+        webServerID = ID;
+        inIP = getIP();
+        outIP = getIP();
+        timeLeft = rand() % 100 + 1;
+    }
 
     std::string getInIP() {
         return inIP;
@@ -39,29 +45,21 @@ class Request {
         timeLeft--;
     }
     void printStatus() {
-        std::cout << "inIP: " << inIP << ", outIP: " << outIP << std::endl;
+        std::cout << " Web Server: " <<  webServerID <<  ", inIP: " << inIP << ", outIP: " << outIP << std::endl;
     }
 };
-
-
-Request::Request() {
-    inIP = getIP();
-    outIP = getIP();
-    timeLeft = rand() % 100 + 1;
-}
-
 
 
 int main() {
     srand(time(0));
     std::queue<Request*> q;
-    Request *test = new Request();
+    Request *test = new Request("D");
     q.push(test);
 
-    for (int i; i < 1000; i++){
+    for (unsigned int i; i < 1000; i++){
         if (q.size() > 0) {
             if (q.front()->getTimeLeft() <= 0) {
-                std::cout << "Time: " << i << " ";
+                std::cout << "Time: " << i << ", ";
                 q.front()->printStatus();
                 q.pop();
             } else {
@@ -70,7 +68,7 @@ int main() {
         }
 
         if (rand() % 20 == 0) {
-            Request *nReq = new Request();
+            Request *nReq = new Request("A");
             q.push(nReq);
         }
     }
