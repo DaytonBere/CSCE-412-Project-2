@@ -4,96 +4,9 @@
 #include <ctime>
 #include <queue>
 
+#include "WebServer.h"
+
 using namespace std;
-
-class Request {
-    private:
-
-    char webServerID;
-    string inIP;
-    string outIP;
-    int timeLeft;
-
-    string getIP () {
-
-        int one = rand() % 256;
-        int two = rand() % 256;
-        int three = rand() % 256;
-        int four = rand() % 256;
-
-        string IP = to_string(one) + "." + to_string(two) + "." + to_string(three) + "." + to_string(four);
-        return IP;
-    }
-
-    public:
-
-    Request (char ID) {
-        webServerID = ID;
-        inIP = getIP();
-        outIP = getIP();
-        timeLeft = rand() % 100 + 1;
-    }
-
-    Request () {
-        webServerID = '-';
-        inIP = getIP();
-        outIP = getIP();
-        timeLeft = 0;
-    }
-
-    string getInIP () {
-        return inIP;
-    }
-    string getOutIP () {
-        return outIP;
-    }
-
-    char getWebServerID () {
-        return webServerID;
-    }
-
-    int getTimeLeft () {
-        return timeLeft;
-    }
-
-    void tick () {
-        timeLeft--;
-    }
-
-    void printStatus () {
-        cout << " Web Server: " <<  webServerID <<  ", inIP: " << inIP << ", outIP: " << outIP << endl;
-    }
-};
-
-class WebServer {
-    private:
-    char webServerID;
-    int probability;
-
-
-    public:
-    WebServer (char ID) {
-        webServerID = ID;
-        probability = rand() % 80 + 20;
-    }
-
-    Request* getRequest () {
-        return new Request(webServerID);
-    }
-
-    bool roll () {
-        int r = rand() % probability;
-        return r == 0;
-    }
-
-    void print () {
-        cout << "WebServerID: " << webServerID << ", Probability: " << probability << endl;
-    }
-};
-
-
-
-
 
 
 int main() {
