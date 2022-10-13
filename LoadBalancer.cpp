@@ -7,7 +7,7 @@ LoadBalancer::LoadBalancer (int web, int queue, long long time) {
     MAXWEBSERVERS = web;
     MAXQUEUE = queue;
     MAXTIME = time;
-    reqestsCompleted = 0;
+    requestsCompleted = 0;
 
     char LETTER = 'A';
     for (int i = 0; i < MAXWEBSERVERS; i++) {
@@ -23,7 +23,7 @@ void LoadBalancer::processRequests (int i) {
             if (processQueue.front()->getWebServerID() != '-') {
                 std::cout << "Time: " << i << ", ";
                 processQueue.front()->printStatus();
-                reqestsCompleted++;
+                requestsCompleted++;
             }
             processQueue.pop();
         } else {
@@ -62,7 +62,7 @@ void LoadBalancer::run () {
         refillRequests ();
     }
     std::cout << std::endl;
-    std::cout << reqestsCompleted << " requests completed" << std::endl;
+    std::cout << requestsCompleted << " requests completed" << std::endl;
     std::cout << "Ended with " << processQueue.size() << " items in the process queue" << std::endl;
     std::cout << "Ended with " << awaitQueue.size() << " items in the await queue" << std::endl;
 }

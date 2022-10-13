@@ -1,0 +1,57 @@
+\hypertarget{class_load_balancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_load_balancer_a10d31847628a37eeed27f7c2a344d1ef}{Load\+Balancer}} (int web, int queue, long long time)
+\item 
+void \mbox{\hyperlink{class_load_balancer_a8814f42670f011a0af058b0e7a57d455}{process\+Requests}} (int i)
+\item 
+void \mbox{\hyperlink{class_load_balancer_a1b8df390c4252624938aed7e45e1521c}{generate\+Requests}} ()
+\item 
+void \mbox{\hyperlink{class_load_balancer_a2e71c06728b825a74b1887fad65a19f8}{refill\+Requests}} ()
+\item 
+void \mbox{\hyperlink{class_load_balancer_a528909054cb20964cba1fb35ceb9003f}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_load_balancer_a10d31847628a37eeed27f7c2a344d1ef}\label{class_load_balancer_a10d31847628a37eeed27f7c2a344d1ef}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{web,  }\item[{int}]{queue,  }\item[{long long}]{time }\end{DoxyParamCaption})}
+
+Constructor that takes in user input in main(). Web chooses how many Web\+Servers to create. Queue sets the max number of Requests to hold in the process\+Queue. Time sets the number of ticks to run for. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_load_balancer_a1b8df390c4252624938aed7e45e1521c}\label{class_load_balancer_a1b8df390c4252624938aed7e45e1521c}} 
+\index{LoadBalancer@{LoadBalancer}!generateRequests@{generateRequests}}
+\index{generateRequests@{generateRequests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{generateRequests()}{generateRequests()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::generate\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+For every \mbox{\hyperlink{class_web_server}{Web\+Server}}, potentially generate a new \mbox{\hyperlink{class_request}{Request}} to the await\+Queue \mbox{\Hypertarget{class_load_balancer_a8814f42670f011a0af058b0e7a57d455}\label{class_load_balancer_a8814f42670f011a0af058b0e7a57d455}} 
+\index{LoadBalancer@{LoadBalancer}!processRequests@{processRequests}}
+\index{processRequests@{processRequests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{processRequests()}{processRequests()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::process\+Requests (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Counts down one tick for every \mbox{\hyperlink{class_request}{Request}} in the process\+Queue and adds the remaining ones to teh temp\+Queue \mbox{\Hypertarget{class_load_balancer_a2e71c06728b825a74b1887fad65a19f8}\label{class_load_balancer_a2e71c06728b825a74b1887fad65a19f8}} 
+\index{LoadBalancer@{LoadBalancer}!refillRequests@{refillRequests}}
+\index{refillRequests@{refillRequests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{refillRequests()}{refillRequests()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::refill\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Move the Requests back into the process\+Queue from the temp\+Queue, flush the temp\+Queue, and add Requests from the await\+Queue if there are slots open \mbox{\Hypertarget{class_load_balancer_a528909054cb20964cba1fb35ceb9003f}\label{class_load_balancer_a528909054cb20964cba1fb35ceb9003f}} 
+\index{LoadBalancer@{LoadBalancer}!run@{run}}
+\index{run@{run}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Uses process\+Requests(i), generate\+Requests (), and refill\+Requests () to start simulation, prints appropriate data 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_load_balancer_8h}{Load\+Balancer.\+h}}\item 
+Load\+Balancer.\+cpp\end{DoxyCompactItemize}

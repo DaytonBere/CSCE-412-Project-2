@@ -1,0 +1,89 @@
+\hypertarget{class_request}{}\doxysection{Request Class Reference}
+\label{class_request}\index{Request@{Request}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}} ()
+\item 
+\mbox{\hyperlink{class_request_af4ad475d40186ec6f70a1ed4dc1b6c51}{Request}} (char ID)
+\item 
+std\+::string \mbox{\hyperlink{class_request_a599e943f53fff456cecd4f87f50a2c78}{get\+IP}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_request_a2963a2f8a83cf3bf5810f300859d3dc7}{get\+In\+IP}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_request_acf5cfea1b467d1eeb89ee24c450db02c}{get\+Out\+IP}} ()
+\item 
+char \mbox{\hyperlink{class_request_aacaa001374dc029705064577af8385a1}{get\+Web\+Server\+ID}} ()
+\item 
+int \mbox{\hyperlink{class_request_a1f8fbcc3df4130a745fe15dd5409e284}{get\+Time\+Left}} ()
+\item 
+void \mbox{\hyperlink{class_request_a6b19bb761794a8bb8ee936453a834d08}{tick}} ()
+\item 
+void \mbox{\hyperlink{class_request_af094ac56c9b4a56262f37ad6be306c83}{print\+Status}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_request_afaf8d8928de7ffff8a3767589489bd33}\label{class_request_afaf8d8928de7ffff8a3767589489bd33}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor needed for starting the \mbox{\hyperlink{class_load_balancer}{Load\+Balancer}} \mbox{\Hypertarget{class_request_af4ad475d40186ec6f70a1ed4dc1b6c51}\label{class_request_af4ad475d40186ec6f70a1ed4dc1b6c51}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{char}]{ID }\end{DoxyParamCaption})}
+
+Constructor used by \mbox{\hyperlink{class_web_server}{Web\+Server}} to identify the \mbox{\hyperlink{class_request}{Request}} with its \mbox{\hyperlink{class_web_server}{Web\+Server}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_request_a2963a2f8a83cf3bf5810f300859d3dc7}\label{class_request_a2963a2f8a83cf3bf5810f300859d3dc7}} 
+\index{Request@{Request}!getInIP@{getInIP}}
+\index{getInIP@{getInIP}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getInIP()}{getInIP()}}
+{\footnotesize\ttfamily std\+::string Request\+::get\+In\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter method for in\+IP \mbox{\Hypertarget{class_request_a599e943f53fff456cecd4f87f50a2c78}\label{class_request_a599e943f53fff456cecd4f87f50a2c78}} 
+\index{Request@{Request}!getIP@{getIP}}
+\index{getIP@{getIP}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIP()}{getIP()}}
+{\footnotesize\ttfamily std\+::string Request\+::get\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Generates random IP address \mbox{\Hypertarget{class_request_acf5cfea1b467d1eeb89ee24c450db02c}\label{class_request_acf5cfea1b467d1eeb89ee24c450db02c}} 
+\index{Request@{Request}!getOutIP@{getOutIP}}
+\index{getOutIP@{getOutIP}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getOutIP()}{getOutIP()}}
+{\footnotesize\ttfamily std\+::string Request\+::get\+Out\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter method for out\+IP \mbox{\Hypertarget{class_request_a1f8fbcc3df4130a745fe15dd5409e284}\label{class_request_a1f8fbcc3df4130a745fe15dd5409e284}} 
+\index{Request@{Request}!getTimeLeft@{getTimeLeft}}
+\index{getTimeLeft@{getTimeLeft}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getTimeLeft()}{getTimeLeft()}}
+{\footnotesize\ttfamily int Request\+::get\+Time\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter method for time\+Left \mbox{\Hypertarget{class_request_aacaa001374dc029705064577af8385a1}\label{class_request_aacaa001374dc029705064577af8385a1}} 
+\index{Request@{Request}!getWebServerID@{getWebServerID}}
+\index{getWebServerID@{getWebServerID}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getWebServerID()}{getWebServerID()}}
+{\footnotesize\ttfamily char Request\+::get\+Web\+Server\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter method for web\+Server\+ID \mbox{\Hypertarget{class_request_af094ac56c9b4a56262f37ad6be306c83}\label{class_request_af094ac56c9b4a56262f37ad6be306c83}} 
+\index{Request@{Request}!printStatus@{printStatus}}
+\index{printStatus@{printStatus}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{printStatus()}{printStatus()}}
+{\footnotesize\ttfamily void Request\+::print\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Uses getters to cout status of the \mbox{\hyperlink{class_request}{Request}} \mbox{\Hypertarget{class_request_a6b19bb761794a8bb8ee936453a834d08}\label{class_request_a6b19bb761794a8bb8ee936453a834d08}} 
+\index{Request@{Request}!tick@{tick}}
+\index{tick@{tick}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Request\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Used in the \mbox{\hyperlink{class_load_balancer}{Load\+Balancer}} to reduce time\+Left by 1 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_request_8h}{Request.\+h}}\item 
+Request.\+cpp\end{DoxyCompactItemize}

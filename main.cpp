@@ -7,6 +7,13 @@
 #include "LoadBalancer.h"
 
 
+/*! \mainpage CSCE-412 Project 2 Dayton Berezoski (228005087)
+ *
+ * This is the Doxygen webpage for my CSCE 412 Project 2.
+ * GitHub link: https://github.com/DaytonBere/CSCE-412-Project-2
+ *
+ */
+
 int main() {
     srand(time(0));
     std::cout << "Welcome to CSCE 412 project 2 Load Balancer by Dayton Berezoski" << std::endl << std::endl;
