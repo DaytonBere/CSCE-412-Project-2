@@ -1,15 +1,14 @@
 #include <string>
-using namespace std;
 
 class Request {
     private:
 
         char webServerID;
-        string inIP;
-        string outIP;
+        std::string inIP;
+        std::string outIP;
         int timeLeft;
 
-        string getIP (); 
+        std::string getIP (); 
 
     public:
 
@@ -17,9 +16,9 @@ class Request {
 
         Request (char ID);
 
-        string getInIP ();
+        std::string getInIP ();
 
-        string getOutIP ();
+        std::string getOutIP ();
 
         char getWebServerID ();
 

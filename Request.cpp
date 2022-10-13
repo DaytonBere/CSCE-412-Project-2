@@ -4,14 +4,14 @@
 #include <ctime>
 #include "Request.h"
 
-string Request::getIP () {
+std::string Request::getIP () {
 
     int one = rand() % 256;
     int two = rand() % 256;
     int three = rand() % 256;
     int four = rand() % 256;
 
-    string IP = to_string(one) + "." + to_string(two) + "." + to_string(three) + "." + to_string(four);
+    std::string IP = std::to_string(one) + "." + std::to_string(two) + "." + std::to_string(three) + "." + std::to_string(four);
     return IP;
 }
 
@@ -30,11 +30,11 @@ Request::Request () {
     timeLeft = 0;
 }
 
-string Request::getInIP () {
+std::string Request::getInIP () {
     return inIP;
 }
 
-string Request::getOutIP () {
+std::string Request::getOutIP () {
     return outIP;
 }
 
@@ -51,5 +51,5 @@ void Request::tick () {
 }
 
 void Request::printStatus () {
-    cout << " Web Server: " <<  webServerID <<  ", inIP: " << inIP << ", outIP: " << outIP << endl;
+    std::cout << " Web Server: " <<  webServerID <<  ", inIP: " << inIP << ", outIP: " << outIP << std::endl;
 }
