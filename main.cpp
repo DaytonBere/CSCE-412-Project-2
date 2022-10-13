@@ -74,7 +74,7 @@ class WebServer {
     public:
     WebServer (char ID) {
         webServerID = ID;
-        probability = rand() % 10 + 10;
+        probability = rand() % 80 + 20;
     }
 
     Request* getRequest () {
