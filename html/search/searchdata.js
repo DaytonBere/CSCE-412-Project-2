@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "cglprtw",
   1: "lrw",
-  2: "lrw",
+  2: "lw",
   3: "glprtw",
   4: "c"
 };

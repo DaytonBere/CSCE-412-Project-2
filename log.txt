@@ -1,5 +1,46 @@
 The performance of the LoadBalancer works well so long as the number of slots in the queue is double the number of webservers.
 If there is less than this the LoadBalancer will not be able to get everything in at least the processQueue.
+Thus the optimal number of WebServers to slots in the Queue is 2*WebServers = QueueSize.
+
+Test 1:
+WebServers: 26
+QueueSize: 52
+Ticks: 10000
+Requests in processQueue: 21
+Requests in awaitQueue: 0
+Requests completed: 6006
+
+Test 2:
+WebServers: 26
+QueueSize: 26
+Ticks: 10000
+Requests in processQueue: 26
+Requests in awaitQueue: 16
+Requests completed: 4619
+
+Test 3:
+WebServers: 26
+QueueSize: 13
+Ticks: 10000
+Requests in processQueue: 13
+Requests in awaitQueue: 2033
+Requests completed: 2524
+
+Test 4:
+WebServers: 13
+QueueSize: 26
+Ticks: 10000
+Requests in processQueue: 13
+Requests in awaitQueue: 0
+Requests completed: 3119
+
+Test 4:
+WebServers: 13
+QueueSize: 13
+Ticks: 10000
+Requests in processQueue: 13
+Requests in awaitQueue: 158
+Requests completed: 158
 
 Task Time Range Size: 1-100
 

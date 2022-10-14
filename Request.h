@@ -1,7 +1,7 @@
 #include <string>
 
 
-/*!
+/*
  * @file Request.h 
  * @brief The Request class simulates the requests of random requirements being sent to the LoadBalancer.
  * 
