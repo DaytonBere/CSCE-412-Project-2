@@ -32,7 +32,7 @@ int main() {
     }
     std::cout << std::endl << std::endl;
 
-    long long MAXTIME ;
+    long long MAXTIME;
     std::cout << "Please type the number of ticks to run the server for: ";
     std::cin >> MAXTIME;
     std::cout << std::endl << std::endl;

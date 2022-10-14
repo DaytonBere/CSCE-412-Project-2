@@ -61,6 +61,7 @@ void LoadBalancer::run () {
         generateRequests ();
         refillRequests ();
     }
+    
     std::cout << std::endl;
     std::cout << requestsCompleted << " requests completed" << std::endl;
     std::cout << "Ended with " << processQueue.size() << " items in the process queue" << std::endl;

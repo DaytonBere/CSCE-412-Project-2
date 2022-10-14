@@ -38,8 +38,7 @@ class LoadBalancer {
     public:
         /*! Constructor that takes in user input in main(). Web chooses how many WebServers to create. Queue sets the max number of Requests to hold in the processQueue. Time sets the number of ticks to run for.
         */
-        LoadBalancer (int web, int queue, long long time); 
-
+       LoadBalancer (int web, int queue, long long time);
         /*! Counts down one tick for every Request in the processQueue and adds the remaining ones to teh tempQueue */
         void processRequests (int i); 
 
